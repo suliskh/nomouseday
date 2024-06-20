@@ -1,0 +1,185 @@
+body {
+  font-family: "Segoe UI", "Segoe UI Web (West European)", -apple-system,
+    BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+
+  margin: 0;
+}
+
+/*
+ * Header
+ */
+
+header {
+  background-color: #e4edf3;
+  padding: 8px 12px;
+}
+
+header h1 {
+  font-size: 18px;
+
+  margin: 0;
+  gap: 8px;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+header h1::after {
+  content: "";
+  background-image: url("images/icon-on128.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+}
+
+/*
+ * Main
+ */
+
+main {
+  width: 200px;
+  padding: 12px;
+}
+
+/*
+ * FIELD
+ */
+
+.field label {
+  font-size: 14px;
+  font-weight: semibold;
+  line-height: 20px;
+}
+
+.field label + * {
+  display: block;
+  margin-block-start: 4px;
+}
+
+* ~ .field {
+  margin-block-start: 16px;
+}
+
+/*
+ * SWITCH
+ */
+:root {
+  --switch-width: 40px;
+  --switch-height: 20px;
+  --switch-gap: 2px;
+  --switch-bullet-size: 14px;
+}
+
+.switch {
+  border-radius: 99999px;
+
+  display: inline-flex;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  margin-block: 6px;
+  position: relative;
+}
+
+.switch:focus-within {
+  box-shadow: 0px 0px 0px 1px white, 0px 0px 0px 3px #0f6cbd; /*rgba(15, 108, 189, 0.6);*/
+}
+
+.switch .slider {
+  border: 1px solid #616161;
+  border-radius: 99999px;
+
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding-inline: var(--switch-gap);
+}
+
+.switch .slider,
+.switch .slider .bullet {
+  transition-duration: 0.2s;
+  transition-property: background, transform;
+  transition-timing-function: cubic-bezier(0.33, 0, 0.67, 1);
+}
+
+.switch .slider .bullet {
+  border-radius: 100%;
+  background-color: #616161;
+
+  display: inline-block;
+  width: var(--switch-bullet-size);
+  height: var(--switch-bullet-size);
+}
+
+.switch input[type="checkbox"] {
+  opacity: 0;
+
+  position: absolute;
+  margin: 0;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.switch input[type="checkbox"]:checked ~ .slider .bullet {
+  background: white;
+
+  transform: translateX(
+    calc(
+      calc(var(--switch-width) - var(--switch-gap) * 2) -
+        var(--switch-bullet-size) - 2px
+    )
+  );
+}
+
+.switch input[type="checkbox"]:checked ~ .slider {
+  background-color: #0f6cbd;
+  border-color: #0f6cbd;
+}
+
+/*
+ * SELECT
+ */
+
+.select {
+  height: 32px;
+  min-width: 160px;
+  position: relative;
+}
+
+.select select {
+  appearance: none;
+  border: 1px solid #d1d1d1;
+  border-radius: 4px;
+  background-color: transparent;
+
+  box-sizing: border-box;
+  padding-inline-start: 10px;
+  padding-inline-end: 32px;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.select svg {
+  position: absolute;
+  right: 0;
+  margin-inline: 10px;
+  height: 100%;
+}
+
+.select:focus {
+  outline: 0;
+  border-color: #0f6cbd;
+  box-shadow: inset 0px 0px 0px 1px #0f6cbd; /*rgba(15, 108, 189, 0.6);*/
+}

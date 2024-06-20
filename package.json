@@ -1,0 +1,9 @@
+{
+  "name": "nomouseday",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "devDependencies": {
+    "chrome-types": "^0.1.286"
+  }
+}

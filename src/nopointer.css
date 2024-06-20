@@ -1,0 +1,5 @@
+html:hover,
+* {
+  pointer-events: none !important;
+  cursor: none !important;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>No Mouse Day</title>
+    <script type="module" defer type="text/javascript" src="popup.js"></script>
+
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <h1>No Mouse Day</h1>
+    </header>
+
+    <main>
+      <div class="field">
+        <!-- <label for="state">Hide pointer:</label> -->
+
+        <div class="switch">
+          <input type="checkbox" name="state" id="state" role="switch" />
+
+          <span class="slider">
+            <span class="bullet"></span>
+          </span>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="repeat-day">Autohide on:</label>
+
+        <div class="select">
+          <select name="repeat-day" id="repeat-day">
+            <option value="-1">
+              <span aria-hidden="true">--</span> None
+              <span aria-hidden="true">--</span>
+            </option>
+            <option value="0">Sunday</option>
+            <option value="1">Monday</option>
+            <option value="2">Tuesday</option>
+            <option value="3">Wednesday</option>
+            <option value="4">Thursday</option>
+            <option value="5">Friday</option>
+            <option value="6">Saturday</option>
+          </select>
+
+          <svg
+            fill="currentColor"
+            aria-hidden="true"
+            width="1em"
+            height="1em"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M15.85 7.65c.2.2.2.5 0 .7l-5.46 5.49a.55.55 0 0 1-.78 0L4.15 8.35a.5.5 0 1 1 .7-.7L10 12.8l5.15-5.16c.2-.2.5-.2.7 0Z"
+              fill="currentColor"
+            />
+          </svg>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
